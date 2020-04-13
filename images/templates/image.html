@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<table>
+		<tr><td>Size (b)</td><td>:</td><td>{{ size }}</td></tr>
+		<tr><td>Width</td><td>:</td><td>{{ width }}</td></tr>
+		<tr><td>Height</td><td>:</td><td>{{ height }}</td></tr>
+	</table>
+	<p><a href="{% url 'images_list' %}">Images list</a></p>
+	{% if messages %}
+	{% for message in messages %}<h3><font color="red">{{ message }}</font></h3>{% endfor %}
+	{% endif %}
+	<p><img src="{{ image_obj.image.url }}"></p>
+{% endblock content %}

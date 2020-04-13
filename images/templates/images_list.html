@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p><a href="{% url 'upload' %}">Upload image</a></p>
+<p>Images list:</p>
+{% for image_obj in images %}
+	<p><a href="{{ image_obj.get_absolute_url }}"><img height="200" src="{{ image_obj.image.url }}"></a></p>
+{% endfor %}
+{% endblock content %}
